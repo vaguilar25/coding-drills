@@ -14,7 +14,9 @@
         /* create a padding of 50px*/
     
     /* =========================== */
-            
+    div {
+        padding:50px;
+    }
     /* =========================== */
     /* select every p element for styling */
 
@@ -25,15 +27,21 @@
         /* add a font-size of 20px */
 
     /* =========================== */
+    p {
+        margin:0;
+        padding:15px;
+        font-size:20px;
+    }
 
     /* =========================== */
     .red-textbox-left {
         /* seperate the red box from the yellow with a 200px margin between them */
 
         /* add a margin of 50px to the left of this element*/
-
+        margin-top: 200px;
         float: left;
         background-color: red;
+        margin-left:50px;
     }
     /* =========================== */
 
@@ -43,6 +51,7 @@
 
         float: right;
         background-color: blue;
+        margin-right:50px;
     }
     /* =========================== */
 
@@ -52,6 +61,7 @@
 
         float: initial;
         background-color: yellow;
+        margin-bottom:50px;
     }
     /* =========================== */
     
@@ -61,12 +71,13 @@
 
         background-color: green;
         clear: both;
+        margin-top:50px;
     }
 </style>
 
 <body>
    <div class="red-textbox-left">
-        <p>
+        <p id=#redBox>
             I'm a red text box
         </p>
     </div>
