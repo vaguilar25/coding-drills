@@ -1,0 +1,31 @@
+h1 {
+    font-weight: bold;
+    font-size:40px;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 30px;
+}
+
+#p1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+#p2 {
+    font-family: 'Spicy Rice', cursive;
+}
+
+#p3 {
+
+    font-family: 'Poor Story', cursive;
+}
+
+#p4 {
+    font-family: 'Krub', sans-serif;
+}
+
+p:hoover {
+    font-family: 'Oswald', sans-serif;
+    font-size:20px;
+}

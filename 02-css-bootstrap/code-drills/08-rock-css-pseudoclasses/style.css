@@ -4,6 +4,8 @@
   margin: 20px;
 }
 
+
+
 .inside-box {
   background-color: black;
   height: 50px;
@@ -13,16 +15,29 @@
 
 #top1, #bottom1 {
   background-color: red;
+  float: left;
+}
+#bottom1:hover {
+
+  height: 75px;
 }
 
 #top2, #bottom2 {
   background-color: green;
+  float: left;
 }
 
 #top3, #bottom3 {
   background-color: blue;
+  float: left;
 }
 
+#bottom3:active {
+    margin-left:400px;
+}
+#bottom3:hover {
+  background-color:purple;
+}
 button {
   height: 100px;
   width: 200px;
@@ -37,3 +52,30 @@ button {
 
 /* Your code goes below here! */
 
+.btn-even:hover {
+  height: 150px;
+  width: 250px;
+}
+
+.btn-even:active {
+  height: 50px;
+  width: 100px;
+}
+
+.btn-odd:hover {
+  color:white;
+  background-color:black;
+  border:3px solid red;
+  width: 250px;
+}
+
+.btn-odd:active {
+  color:green;
+  background-color:brown;
+  border:1px solid blue;
+  width: 150px;
+}
+
+.clear div:hover {
+  background-color: yellow; 
+}
