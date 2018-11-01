@@ -54,3 +54,17 @@
   background-color: olivedrab;
   transform: translateY(-100%);
 }
+
+#main2 {
+  height: 100vh;
+  width: 100%;
+  /* rgb stands for red, green, blue using a combination of these three colors, you can make ANY color. Play around with th numbers a little bit! */
+  background-color: blue;
+  position: relative;
+}
+
+.anchorClass {
+  position:absolute;
+  transform: translate(500px,0px);
+  color:palegreen;
+}
