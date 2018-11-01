@@ -25,12 +25,14 @@
   height: 100px;
   width: 100px;
   background-color: purple;
+  top:0px;
+  left:0px;
 }
 
 .box-2 {
   position: absolute;
-
-
+  top:0px;
+  right:0px;
   height: 100px;
   width: 100px;
   background-color: blue; 
@@ -38,21 +40,21 @@
 
 .box-3 {
   position: absolute;
-
-
+  transform: translateY(-100%);
+  left:0px;
   height: 100px;
   width: 100px;
   background-color: yellow;
- 
+  top: 100%;
 }
 
 .box-4 {
   position: absolute;
-
-
+  transform: translateY(-100%);
+  right:0px;
   height: 100px;
   width: 100px;
   background-color: olivedrab;
-  
+  top: 100%;
   
 }
