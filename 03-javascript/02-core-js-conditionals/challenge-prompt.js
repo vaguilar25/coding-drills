@@ -5,44 +5,45 @@
 
 // make a variable called `characterOneName` and assign it to be a string of "Mr. Farley"
 
-
+var characterOneName="Mr. Farley";
 // assign a new value "Ms. Farley" to the variable `characterOneName`
-
+characterOneName="Mrs. Leia";
 
 // make a new variable `characterOneAge` and assign it an age of your choice
-
+var characterOneAge = 13;
 
 // reassign the variable `characterOneAge` to be the integer 6
 
-
+characterOneAge =6;
 // make a variable called `characterOneSalary` and assign it to be the number 100000.00
-
+var characterOneSalary = 100000.00;
 
 // make a variable called `characterOneProfession` and assign it a value of "Web Developer"
-
+var characterOneProfession = "Web Developer"
 
 // make a variable called `characterOneSpecies` and assign it a value of "cat"
 
-
+var characterOneSpecies = "cat";
 // make a variable called `characterOneLocation` and assign it a value of "San Francisco, CA"
 
-
+var characterOneLocation = "San Francisco, CA";
 // make a variable called `characterOneRent` and assign it to be the number 2000.00
 
+var characterOneRent = 2000.00;
 
 // make a variable called `characterOneExpenses` and assign it to be the number 1500.00
-
+var characterOneExpenses = 1500;
 
 // make a variable called `characterOneYearlyRent` and assign it to be 12 times `characterOneRent`
-
+var characterOneYearlyRent=12*characterOneRent;
 
 // make a variable called `characterOneYearlyExpenses` and assign it to be 12 times `characterOneExpenses`
-
+var characterOneYearlyExpenses = 12*characterOneExpenses;
 
 // make a variable called `characterOneYearlySavings` and assign it to be what remains of character one's salary after removing both the yearly rent and the yearly expenses
 // hint: much like in math, you can use parenthesis to define order of operations
 
-
+var characterOneYearlySavings = characterOneSalary - characterOneRent - characterOneYearlyExpenses;
 
 // Character Two
 
