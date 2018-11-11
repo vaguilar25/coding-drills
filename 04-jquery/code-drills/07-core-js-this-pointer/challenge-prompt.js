@@ -26,22 +26,25 @@ var california = {
 }
 
 var name = "Not California";
+console.log ("name begining: " + this.name + " California Name: " + california.sanfrancisco.getName());
 
 console.log("==================== Question 01 ====================");
 // What is the value of `this.name`?
-// 
+// Not California
+console.log("Answer Q01: " + this.name);
 
 
 
 console.log("==================== Question 02 ====================");
 // What is the value of california.name?
-//
+//California
 
-
+console.log("Answer Q02: " + california.name);
 
 console.log("==================== Question 03 ====================");
 // What does `california.getName()` return?
-//
+//California
+console.log("Answer Q03: " + california.getName());
 
 
 
@@ -54,10 +57,10 @@ function stateCall(callback) {
 
   console.log("==================== Question 04 ====================");
   // What is the value of `location`?
-  //
+  //undefined
 
 }
-
+console.log("Answer Q04: " + location);
 
 
 console.log("==================== Question 05 ====================");
@@ -66,14 +69,13 @@ console.log("==================== Question 05 ====================");
 
 // ================ Your code here ================
 
-
-
-
+  california.getCapital = function () { 
+    return this.capital;
 
 // ============== End of your code area ===========
-
+};
 // console log the return value of your method here
-
+console.log(  california.getCapital());
 
 // end of console log area
 
@@ -81,8 +83,8 @@ console.log("==================== Question 05 ====================");
 
 console.log("==================== Question 06 ====================");
 // what does `california.sanfrancisco.getName()` return?
-//
-
+//San francisco
+ console.log(california.sanfrancisco.getName());
 
 
 
@@ -95,8 +97,9 @@ function cityCall(callback) {
 
   console.log("==================== Question 07 ====================");
   // What is the value of `location`?
-  //
-
+  //san francisco Why not california?
+ 
+  console.log("Location: " + location);
 }
 
 
@@ -107,8 +110,8 @@ function getName() {
 
 console.log("==================== Question 08 ====================");
 // What does `getName()` return?
-// 
-
+// not california
+console.log (getName());
 
 
 var counter = 1;
@@ -132,7 +135,9 @@ function count() {
 
 console.log("==================== Question 09 ====================");
 // If we execute `count()` what does it console log out?
-//
+//Odd 1 ... 
+
+//console.log (count());
 
 
 
@@ -143,8 +148,8 @@ function countWrapper() {
 
 console.log("==================== Question 10 ====================");
 // What is the return value of `countWrapper()`
-//
+//0...
 
-
+//console.log (countWrapper());
 
 // There's some short explanations about the behavior of `this` in the solutions file.
