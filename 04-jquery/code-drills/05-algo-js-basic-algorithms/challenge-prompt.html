@@ -20,9 +20,11 @@
     function numberGuess(int) {
     // --------- code starts --------------
 
-
-
-
+      if (int === 42) {
+        console.log ("true");
+      } else {
+        console.log("false");
+      }
 
     // --------- code ends --------------
     }
@@ -42,17 +44,35 @@
 
     function findSmallest(arr) {
     // --------- code starts --------------
+      var smallestNumber=0;
+      var arr1 = arr;
+      var arr2 = arr;
+
+     arr1.forEach(function(firstNumber) {
+       arr2.forEach(function(secondNumber,index){
+          if ( firstNumber < secondNumber) {
+            smallestNumber = firstNumber;
+            arr1.splice(index,1);
+           } 
+        });
+        
+      });
+      //console.log("numbers" + number1 + "    "  + number2 )
+      if ( arr1[0] < arr[1]) {
+          smallestNumber = arr1[0];
+        } else {
+          smallestNumber = arr1[1];
+        }
 
 
-
-
-
+      console.log("smallestNumber " + smallestNumber);
     // --------- code ends --------------
     }
 
     // This code is to help you test your function
-    var nums = [10, 11, 3, 123, 54, 6, 67];
+    var nums = [44, 11, 3,54, 123, 84, 67];
     findSmallest(nums);
+ 
 
     console.log("==================== Question 03 ====================");
     // Write a function which takes in an array of strings. The function should console.log the shortest string in the array.
@@ -60,7 +80,28 @@
 
     function findShortest(arr){
     // --------- code starts --------------
+    var smallestString="";
+      var arr1 = arr;
+      var arr2 = arr;
 
+     arr1.forEach(function(firstString) {
+       arr2.forEach(function(secondString,index){
+          if ( firstString.length < secondString.length) {
+            smallestString = firstString;
+            arr1.splice(index,1);
+           } 
+        });
+        
+      });
+    
+      if ( arr1[0].length < arr[1].length) {
+          smallestString = arr1[0];
+        } else {
+          smallestString= arr1[1];
+        }
+
+
+      console.log("smallestString " + smallestString);
 
 
 
@@ -69,7 +110,7 @@
     }
 
     // This code is to help you test your function
-    var strings = ["hey there", "yo", "a", "hello", "what up", "hello, my name is farley", "howdy"];
+    var strings = ["hey there", "yo","a", "hello", "what up", "hello, my name is farley", "howdy"];
     findShortest(strings);
 
   
@@ -79,13 +120,20 @@
     // The function should console.log a new array of numbers where none of the elements are less than
     // the low value and none of the elements are greater than the high value
 
-    function filterArray(high, low, arr){
+    function innerBound(high, low, arr){
     // --------- code starts --------------
 
-
-
-
-
+      var smallestNumber=0;
+      var newArray =[];
+     arr.forEach(function(firstNumber,index) {
+        if ( (firstNumber < high) && (firstNumber > low )) {
+           newArray.push(firstNumber);
+       } else {
+          arr.splice(index,1," ");
+       }
+    });
+      console.log("New Array " + newArray)
+      
     // --------- code ends --------------
     }
 
