@@ -8,13 +8,32 @@
 function populateButtons() {
   // Your code goes here
 
-
-
-
-
-
-
+     // $("#buttons-area").append("<button>Hello");
+     // $("#buttons-area").append("<button>World");
+     // $("#buttons-area").append("<button>Clear");
+     // $("#buttons-area").empty();
   // End of your code area
+
+
+  var buttonHello = $("<button>");
+  buttonHello.text("Hello");
+  buttonHello.attr("data", "Hello");
+
+  var buttonWorld = $("<button>");
+  buttonWorld.text("World");
+  buttonWorld.attr("data", "World");
+
+  var buttonReset = $("<button>");
+  buttonReset.text("Reset");
+  buttonReset.attr("data", "Reset");
+
+  var buttonUser = $("<button>");
+  buttonUser.text("User")
+  buttonUser.attr("id", "user-button")
+  buttonUser.attr("data", "");
+
+  $("#buttons-area").append(buttonHello, buttonWorld, buttonReset);
+  $("#user-button-area").append(buttonUser);
 }
 
 // This is jQuery shorthand to a document.ready
@@ -24,14 +43,21 @@ $(function () {
 
   // call on the populateButtons functions we defined above.
   populateButtons();
-
+  
   // This is the key press listener that saves the key the user pressed.
   // Refer to step 4 on the README
   document.onkeyup = function(event) {
     // Your code goes here
+   // var userKeyPress = event.key;
+   // var newButton =$("<button>");
+   // newButton.attr("data-letter",userKeyPress);
+    //newButton.text(userKeyPress);
+   // $("#user-button-area").append(newButton);
 
 
-
+    var previousKeys = $("#user-button").attr("data");
+    previousKeys += event.key;
+    $("#user-button").attr("data", previousKeys);
 
 
 
@@ -44,8 +70,21 @@ $(function () {
   // Refer to step 3 on the README
   $(document).on("click", "button", function (event) {
     // Your code goes here
+//    $("#output").empty();
+ //   $("#output").text();
 
-
+ switch ($(this).attr("data")) {
+  case "Hello":
+  case "World":
+    $("#output").append($(this).attr("data"));
+    break;
+  case "Reset":
+    $("#output").empty()
+    break;
+  default:
+    $("#output").text($(this).attr("data"));
+    $(this).attr("data", "")
+}
 
 
 
