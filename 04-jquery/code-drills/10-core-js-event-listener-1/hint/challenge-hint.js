@@ -16,13 +16,8 @@ console.log("Key press" + userKeyPress);
 if (userKeyPress === "h") {
    // create a confirm dialogue when they do and store the response from that
   // dialogue into the variable we declared outside the event listener
-   // $("body").append("<div>Confirm</div>");
+  
     dialogueAnswer = confirm("Confirm");
-//  function createDialog(title, text, options) {
-  //  return $("<div class='dialog' title='" + title + "'><p>" + text + "</p></div>")
-    //.dialog(options);
-//}
-//createDialog("test","testing", "options");
 
 
 } 
