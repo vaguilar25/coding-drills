@@ -51,6 +51,15 @@ var question05 = setInterval(function () {
   }
 }, 1000 * 1);
 
+// SYNTAX DEMO
+//                       wait this amount of time before executing this function
+//wait
+var wait = setTimeout(doStuff, 5000)
+// clear timeOut
+//                        keep doing this function every 5 seconds
+//repeat
+var keepGoing = setInterval(doStuff, 5000)
+// clearInterval
 
 // ------------------------------------------------------------------
 console.log("==================== Question 06 ====================");
