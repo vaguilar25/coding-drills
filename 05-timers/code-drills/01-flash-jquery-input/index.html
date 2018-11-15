@@ -10,34 +10,31 @@
 
 <body>
 <div class=container>
+        <div class="col text-center" id="display-area"> </div>
+       
     <div>
-        <h1 id="name">/h1>
-        <h2 id="occupation">/h2>
-        <h3 id="city"></h3>
-    </div>
-    <div>
-        <form action="" id="contactData">
+        <form id="contactData">
             First name:<br>
-            <input type="text" name="firstname" >
+            <input type="text" name="firstname" id="firstName" >
             <br>
             Last name:<br>
-            <input type="text" name="lastname" >
+            <input type="text" name="lastname" id="lastName">
             <br>
             Occupation:<br>
-            <input type="text" name="occupation" >
+            <input type="text" name="occupation" id="occupation">
             <br>
             City:<br>
-            <input type="text" name="city" >
+            <input type="text" name="city"  id="city">
             <br>
             State:<br>
-            <input type="text" name="state" >
+            <input type="text" name="state" id="state" >
             <br><br>
-            <input type="submit" value="Submit" >
+            <button type="submit" value="Submit" >Submit</button>
           </form> 
         </div>
 </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/challenge.js"></script>
+    <script src="challenge.js"></script>
 </body>
 </html>
