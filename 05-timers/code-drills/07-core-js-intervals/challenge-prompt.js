@@ -9,7 +9,7 @@ function questionOne() {
     console.log("Question one");
 };
 
-var q1 = setInterval(function() {console.log("Question one");}, 1000*5 );
+//var q1 = setInterval(function() {console.log("Question one")}, 1000*5 ); this is the same
 
 
 // ------------------------------------------------------------------
@@ -39,24 +39,24 @@ function questionThree() {
 console.log("==================== Question 04 ====================");
 // Create an interval that empties the "#question-03" element every 6 seconds
 
-var clearIntervalQ03 = setInterval(clearQuestion,6);
+var clearIntervalQ03 = setInterval(clearQuestion,6000);
 function clearQuestion() {
 
-    $("#question-03").empty("3");
+    $("#question-03").empty();
 };
 
 // ------------------------------------------------------------------
 console.log("==================== Question 05 ====================");
 // Create an interval that appends "5" to the div with an id of "question-05"
 // every second and clear this interval after 5 seconds
-var q5 = setInterval(questionFive,1000*5);
+var q5 = setInterval(questionFive,1000);
 function questionFive() {
     $("#question-05").append("5");
 };
 
-var clearIntervalQ05 = setInterval(clearQuestion5,5);
+var clearIntervalQ05 = setTimeout(clearQuestion5,1000*5);
 function clearQuestion5() {
-    clearInterval(clearIntervalQ05);
+    clearInterval(q5);
 };
 
 // ------------------------------------------------------------------
@@ -73,10 +73,13 @@ function questionSix() {
 
 // Create a timer to clear the interval after 6 seconds
 
-var clearIntervalQ06 = setInterval(clearQuestion6,6);
-function clearQuestion6() {
-    clearInterval(clearIntervalQ06);
-};
+var stop6 = setTimeout(function() {
+    clearInterval(q6)
+}, 6000)
+// var clearIntervalQ06 = setInterval(clearQuestion6,6);
+// function clearQuestion6() {
+//     clearInterval(clearIntervalQ06);
+// };
 
 // ------------------------------------------------------------------
 console.log("==================== Question 07 ====================");
