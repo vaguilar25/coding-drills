@@ -76,7 +76,7 @@
       <input type="submit">
     </form>
   </div>
-    
+
   <div class="library"></div>
 
   <script>
@@ -91,14 +91,41 @@
 
       // ===================== YOUR CODE HERE ==================
 
+      $("#itunes").on("submit", function (event) {
+        event.preventDefault()
+        var searchTerm = $("#term").val();
+        var queryURL = "https://itunes.apple.com/search?term=" + searchTerm;
+        console.log("queryUrl: " + queryURL + "searchTerm: " + searchTerm);
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+          response = JSON.parse(response);
+          console.log(response);
 
+          // - The artwork (grab the highest quality photo, artworkUrl100) 
+          //- The track name
+          //- The artist's name
+          //- And a url to preview the song
+          for (i = 0; i < response.resultCount; i++) {
+            console.log(response.results[i].artworkUrl100);
+            console.log(response.results[i].trackName);
+            console.log(response.results[i].artistName);
+            console.log(response.results[i].previewUrl);
 
-
-
-
-      // =======================================================
-    })
-
+            $(".library").prepend(
+              "<div class=song><img class=thumb src=" + response.results[i].artworkUrl100 + "><h2 class='song-name'>" + response.results[i].trackName + "</h2><h4 class='song-artist'>" + response.results[i].artistName + "</h4> <audio class='song-audio' src=" + response.results[i].previewUrl + " controls></audio></div>"
+            );
+    
+              }
+            })
+    
+    
+          })
+    
+          // =======================================================
+        })
+    
   </script>
 </body>
 
