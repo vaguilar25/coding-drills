@@ -35,11 +35,11 @@
 
 <body>
 
-    <h1 class="heading">Stock Photo Generator!!!</h1>
-    <form id="form">
-      <input type="text" id="imgQuery">
-      <input type="submit">
-    </form>
+  <h1 class="heading">Stock Photo Generator!!!</h1>
+  <form id="form">
+    <input type="text" id="imgQuery">
+    <input type="submit">
+  </form>
 
   <div class="holder"></div>
 
@@ -54,13 +54,33 @@
       });
 
       // ===================== YOUR CODE HERE ==================
+      $(document).on("submit", "#form", function (event) {
+        event.preventDefault();
+        var imgUser = $("#imgQuery").val();
+        var client_id = "6a74014e2aba657622b7f33b18f19ff0ae57016acdd3bb847d3e93bfed367fe1";
+
+        console.log("imgQury " + imgUser );
+        var queryUrl = "https://api.unsplash.com/photos/random?query=" + imgUser + "Accept-Version=v1&client_id=" + client_id;
+   
+
+        $.ajax({
+          url: queryUrl,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response);
+          console.log(response.lenght);
+        //  for (i = 0; i < response.total; i++) {
+            $(".holder").append("<img class='img' src=" + response.urls.raw + ">");
+            console.log("Image: response.results[i].urls: " +  response.urls.raw);
+          //}
 
 
+        })
 
 
+        //========================================================
 
-      //========================================================
-
+      })
     })
 
   </script>
