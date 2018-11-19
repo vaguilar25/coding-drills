@@ -85,14 +85,43 @@
         //Will stop the page from refreshing so we can grab the values input by the user
         event.preventDefault()
 
-      // ===================== YOUR CODE HERE ==================
+        // ===================== YOUR CODE HERE ==================
+        //     Client ID
+        //znR38UOTueQRFR7Dl6rKuQ
+
+        //API Key
+        //3UdX9OizLqmbsfN83vqCBYrev-71rBX0M0CDaXGqNsO9wWO0YCw2J_P_XKaOEILK35M5BEQaXbGX0z4VubRsnK37iy4ZEyWi4_ucv5LYpGeZewDB2RtbWmEVE0LyW3Yx
+        var searchLocation = $("#location").val();
+        var searchCategory = $("#category").val()
+
+        $.ajax({
+          url: 'https://api.yelp.com/v3/businesses/search?term=' + searchCategory + '&location=' + searchLocation + '',
+          method: "GET",
+          headers: {
+            authorization: "Bearer 3UdX9OizLqmbsfN83vqCBYrev-71rBX0M0CDaXGqNsO9wWO0YCw2J_P_XKaOEILK35M5BEQaXbGX0z4VubRsnK37iy4ZEyWi4_ucv5LYpGeZewDB2RtbWmEVE0LyW3Yx"
+          }
+        }).then(function (response) {
+          console.log(response)
+
+          for (i = 0; i < response.businesses.length; i++) {
+            // - The business's name
+            // - The business's phone number
+            // - The business's image
+            // - The business's address, including street address, city and zip.
+            console.log(response.businesses[i].name);
+            console.log(response.businesses[i].phone);
+            console.log(response.businesses[i].image_url);
+            console.log(response.businesses[i].location.address1 + " " + response.businesses[i].location.city + " " + response.businesses[i].location.zip_code);
+
+            $(".container").append("<img class='thumbnail' src=" + response.businesses[i].image_url + "> <h2> " + response.businesses[i].name + "</h2><p>" + response.businesses[i].phone + "</p> <p class='address'>" 
+                      +  response.businesses[i].location.address1 + " " + response.businesses[i].location.city + " " + response.businesses[i].location.zip_code  + "</p>"   );
+                         
+          }
+        })
 
 
 
-
-
-
-      // =======================================================
+        // =======================================================
 
       });
     })
