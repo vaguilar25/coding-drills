@@ -10,10 +10,10 @@
   <title>So you think you can API?</title>
 
   <style>
-
     .heading__container {
       text-align: center !important;
     }
+
     .heading__main {
       text-align: center;
       transform: skew(5deg) rotate(-5deg);
@@ -72,42 +72,67 @@
 
 
     // STEP 4: Based on your research of this API, assign a value to queryURL you think is appropriate to retrieve the top news stories in the US. 
-    var queryURL = "";
+    var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=a5faa61a95f84c69a1ce3c1a911739b7";
 
 
     $.ajax({
-      url: queryURL, 
+      url: queryURL,
       method: "GET"
     }).then(function (response) {
-      
+
       // STEP 5. This is where we'll render our responses to the DOM. 
-      
-        // Because we want to render multiple responses, we will need to use a loop. 
 
-        // Jquery gives us a few methods to render content to our app. .text(), .html(), .append(), .prepend(). Use whichever of these you find most appropriate in this case. Remember, our goal is to render the articles inside of the div with the class of news.
+      // Because we want to render multiple responses, we will need to use a loop. 
 
-        // Check out the .news div for a clue as to which method we should use in this context.
+      // Jquery gives us a few methods to render content to our app. .text(), .html(), .append(), .prepend(). Use whichever of these you find most appropriate in this case. Remember, our goal is to render the articles inside of the div with the class of news.
 
-        // Render the content in this format: 
-        //
-        // <div>
-        //   <h3 class="title">TITLE HERE</h3>
-        //   <p class="author">AUTHOR HERE</p>
-        //   <p class="desc">DESCRIPTION HERE</p>
-        //   <hr>
-        // </div> 
-        //
-        // The title of each article should go in the h3 with the class of title
-        // The author of each article should go in the p tag with the class of author
-        // The description of the article should go in the p tag with the class of desc
+      // Check out the .news div for a clue as to which method we should use in this context.
+
+      // Render the content in this format: 
+      //
+      // <div>
+      //   <h3 class="title">TITLE HERE</h3>
+      //   <p class="author">AUTHOR HERE</p>
+      //   <p class="desc">DESCRIPTION HERE</p>
+      //   <hr>
+      // </div> 
+      //
+      // The title of each article should go in the h3 with the class of title
+      // The author of each article should go in the p tag with the class of author
+      // The description of the article should go in the p tag with the class of desc
+
+      //console.log("response.length " + response.totalResults);
+      for (i = 0; (i < response.totalResults); i++) {
 
 
+        var title = $("<h3>");
+        title.addClass = $("title");
+        title.text(response.articles[i].title);
+        $(".appendMe").append(title);
+
+        var author = $("<p>");
+        author.addClass = $("author");
+       
+        console.log(response.articles[i].author);
+        if (response.articles[i].author === null || response.articles[i].author === "" ) {
+          author.text("Vivian Aguilar");
+          $(".appendMe").append(author);
+        } else {
+          author.text(response.articles[i].author);
+          $(".appendMe").append(author);
+        }
+        var description = $("<p>");
+        description.addClass = $("desc");
+        description.text(response.articles[i].description);
+        $(".appendMe").append(description);
 
 
-      // Step 6. By now, you should have been able to render all of the articles to the news div.
-      
-      // You may notice that some of the articles' authors come back as null. Let's fix that. Within your loop, create a condition which checks to see if the author has value. If it doesn't, have the author instead read your own name
-      
+        $(".appendMe").append("<hr>");
+
+        // Step 6. By now, you should have been able to render all of the articles to the news div.
+
+        // You may notice that some of the articles' authors come back as null. Let's fix that. Within your loop, create a condition which checks to see if the author has value. If it doesn't, have the author instead read your own name
+      }
     });
 
 
