@@ -5,7 +5,7 @@ $(document).submit(function () {
     var dogSearch;
     // grab the value of the users search and store it in dogSearch
 
-
+    dogSearch=$("#dogSearch").val();
 
 
     // We are defining the query URL here. By concatinating strings together, we're able to change our query based upon user input
@@ -18,10 +18,13 @@ $(document).submit(function () {
             method: "GET"
         }).then(function (response) {
             // console.log the response 
-            
+            console.log(response);
             
             // append the image within the response to the page 
-
+            var imgDom =  $("<Img>");
+            imgDom.attr("src",response.message);
+            $(".dogImage").append(imgDom);
+         
         });
     }
 })
