@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dot Notation</title>
 </head>
+
 <body>
-  
+
 
   <script>
-    
+
     var shows = {
       genre: {
         drama: {
           gameOfThrones: {
             cast: [
               {
-              actor: "Sean Bean",
-              character: "Ned Stark",
-              imdb: "https://www.imdb.com/name/nm0000293/?ref_=nv_sr_1"
-            },
-            {
-              actor: "Peter Dinklage",
-              character: "Tyrion Lannister",
-              imdb: "https://www.imdb.com/name/nm0227759/?ref_=nv_sr_1"
-            },
-            {
-              actor: "Maisie Williams",
-              character: "Arya Stark",
-              imdb: "https://www.imdb.com/name/nm3586035/?ref_=nv_sr_1"
-            },
-            {
-              actor: "Emilia Clarke",
-              character: "Danaerys Targaryen",
-              imdb: "https://www.imdb.com/name/nm3592338/?ref_=nv_sr_1"
-            },
-            {
-              actor: "Kit Harrington",
-              character: "Jon Snow",
-              imdb: "https://www.imdb.com/name/nm3229685/?ref_=nv_sr_1"
-            },
+                actor: "Sean Bean",
+                character: "Ned Stark",
+                imdb: "https://www.imdb.com/name/nm0000293/?ref_=nv_sr_1"
+              },
+              {
+                actor: "Peter Dinklage",
+                character: "Tyrion Lannister",
+                imdb: "https://www.imdb.com/name/nm0227759/?ref_=nv_sr_1"
+              },
+              {
+                actor: "Maisie Williams",
+                character: "Arya Stark",
+                imdb: "https://www.imdb.com/name/nm3586035/?ref_=nv_sr_1"
+              },
+              {
+                actor: "Emilia Clarke",
+                character: "Danaerys Targaryen",
+                imdb: "https://www.imdb.com/name/nm3592338/?ref_=nv_sr_1"
+              },
+              {
+                actor: "Kit Harrington",
+                character: "Jon Snow",
+                imdb: "https://www.imdb.com/name/nm3229685/?ref_=nv_sr_1"
+              },
             ],
             numSeasons: 8,
             creators: ["David Benioff", "D.B. Weiss"],
@@ -77,7 +79,7 @@
             numSeasons: 5,
             creators: "Matthew Weiner",
             stillRunning: false
-          }, 
+          },
           dexter: {
             cast: [
               {
@@ -175,7 +177,7 @@
             stillRunning: true
           }
         },
-        
+
         comedy: {
           theOffice: {
             cast: [
@@ -295,7 +297,7 @@
             cast: [
               {
                 actor: "Seth MacFarlane",
-                character:[ "Peter Griffin", "Brian Griffin", "Stewie Griffin"],
+                character: ["Peter Griffin", "Brian Griffin", "Stewie Griffin"],
                 imdb: "https://www.imdb.com/name/nm0532235/?ref_=nv_sr_1"
               },
               {
@@ -310,7 +312,7 @@
               },
               {
                 actor: "Alex Bornstein",
-                character: ["Lois Griffin", "Tricia Takanawa", "Barbara Pewterschmidt" ],
+                character: ["Lois Griffin", "Tricia Takanawa", "Barbara Pewterschmidt"],
                 imdb: "https://www.imdb.com/name/nm0097504/?ref_=nv_sr_1"
               },
               {
@@ -357,7 +359,7 @@
             host: "Seth Meyers"
           }
         },
-        
+
         kids: {
           spongeBob: {
             cast: [
@@ -509,162 +511,166 @@
       }
     }
 
-// Hint: You may find that you're repeating yourself a lot. It may be helpful to create variables that point to different locations withing this object. 
+    // Hint: You may find that you're repeating yourself a lot. It may be helpful to create variables that point to different locations withing this object. 
 
     // For Example : var drama = shows.genre.drama
     //Then to get the actor who plays Rick in Walking Dead, we would simply write drama.walkingDead.cast[0].actor as opposed to shows.genre.drama.walkingDead.cast[0].actor  
 
-// ========================================= SHORTCUTS =========================================
-var drama;
+    // ========================================= SHORTCUTS =========================================
+    var drama;
 
 
-// =============================================================================================
+    // =============================================================================================
 
-//Hint: You may want to use command + f (mac) or ctrl + f (PC) to find the show/actor/character you're looking for
+    //Hint: You may want to use command + f (mac) or ctrl + f (PC) to find the show/actor/character you're looking for
 
-//Better hint: use the below line of code to see the entire object in your browser. You may find it easier to look there than in your text editor:
-console.log(shows);
+    //Better hint: use the below line of code to see the entire object in your browser. You may find it easier to look there than in your text editor:
+    console.log(shows);
 
 
 
-//======================== QUESTION 1 ==========================
-//QUESTION: Who is the actor that plays Squidward in Spongebob (kids)?
-//ANSWER: 
-console.log();
-//==============================================================
+    //======================== QUESTION 1 ==========================
+    //QUESTION: Who is the actor that plays Squidward in Spongebob (kids)?
+    //ANSWER: 
+    console.log(shows.genre.kids.spongeBob.cast[3].actor);
+    //==============================================================
 
-//======================== QUESTION 2 ==========================
-//QUESTION: Patrick Warburton plays Joe Swanson in Family Guy (comedy). What is the link to his imdb page?
-//ANSWER: 
-console.log();
-//==============================================================
+    //======================== QUESTION 2 ==========================
+    //QUESTION: Patrick Warburton plays Joe Swanson in Family Guy (comedy). What is the link to his imdb page?
+    //ANSWER: 
+    console.log(shows.genre.comedy.familyGuy.cast[4].imdb);
+    //==============================================================
 
-//======================== QUESTION 3 ==========================
-//QUESTION: Is the Walking Dead still running?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 3 ==========================
+    //QUESTION: Is the Walking Dead still running?
+    //ANSWER: 
+    console.log(shows.genre.drama.walkingDead.stillRunning);
+    //==============================================================
 
-//======================== QUESTION 4 ==========================
-//QUESTION: Who plays Dexter in Dexter (drama) and who plays Dexter in Dexter's Lab (kids)?
-//HINT: You can console.log two multiple things at once by using a comma like this: console.log(thing1, thing2)
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 4 ==========================
+    //QUESTION: Who plays Dexter in Dexter (drama) and who plays Dexter in Dexter's Lab (kids)?
+    //HINT: You can console.log two multiple things at once by using a comma like this: console.log(thing1, thing2)
+    //ANSWER: 
+    console.log(shows.genre.drama.dexter.cast[0].actor, shows.genre.kids.dextersLab.cast[0].actor);
+    //==============================================================
 
-//======================== QUESTION 5 ==========================
-//QUESTION: Who are the creators of Stranger Things (drama)?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 5 ==========================
+    //QUESTION: Who are the creators of Stranger Things (drama)?
+    //ANSWER: 
+    console.log(shows.genre.drama.strangerThings.creators[0], shows.genre.drama.strangerThings.creators[1]);
+    //==============================================================
 
-//======================== QUESTION 6 ==========================
-//QUESTION: Who hosts the Daily Show (talk)?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 6 ==========================
+    //QUESTION: Who hosts the Daily Show (talk)?
+    //ANSWER: 
+    console.log(shows.genre.talk.theDailyShow.host)
+    //==============================================================
 
-//======================== QUESTION 7 ==========================
-//QUESTION: Who are all the hosts of the view (talk)
-//Hint: You will need to use a loop for this one. You may not simply log the entire array, but must log each name individually
-//ANSWER: 
-// for() {
-//   console.log(); 
-// }
+    //======================== QUESTION 7 ==========================
+    //QUESTION: Who are all the hosts of the view (talk)
+    //Hint: You will need to use a loop for this one. You may not simply log the entire array, but must log each name individually
+    //ANSWER: 
+    //console.log(shows.genre.talk.theView.host);
+    for (i = 0; i < shows.genre.talk.theView.host.length; i++) {
 
-//==============================================================
+      console.log(shows.genre.talk.theView.host[i]);
+    }
 
-//======================== QUESTION 8 ==========================
-//QUESTION: What are the show names of the Impractical Jokers (comedy)
-//Hint: You will need to use a loop for this one. You may not simply log the entire array, but must log each name individually
-//ANSWER: 
-// for() {
-//   console.log(); 
-// }
-//==============================================================
+    //==============================================================
 
-//======================== QUESTION 9 ==========================
-//QUESTION: Who does Will Arnett play in Arrested Development (comedy)
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 8 ==========================
+    //QUESTION: What are the show names of the Impractical Jokers (comedy)
+    //Hint: You will need to use a loop for this one. You may not simply log the entire array, but must log each name individually
+    //ANSWER: 
+    for (i = 0; i < shows.genre.comedy.impracticalJokers.cast.length; i++) {
 
-//======================== QUESTION 10 ==========================
-//QUESTION: Who plays Yami Yugi in Yu-Gi-Oh (kids)?
-//ANSWER: 
-console.log(); 
-//==============================================================
+      console.log(shows.genre.comedy.impracticalJokers.cast[i].showName);
+    }
+    //==============================================================
 
-//======================== QUESTION 11 ==========================
-//QUESTION: How many seasons did the Office (comedy) run?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 9 ==========================
+    //QUESTION: Who does Will Arnett play in Arrested Development (comedy)
+    //ANSWER: 
+    console.log(shows.genre.comedy.arrestedDevelopment.cast[2].character)
+    //==============================================================
 
-//======================== QUESTION 12 ==========================
-//QUESTION: Who are the main characters of the Office (comedy) (not the actors, but the actual character names)?
-//ANSWER: 
-// for() {
-//   console.log(); 
-// }
-//==============================================================
+    //======================== QUESTION 10 ==========================
+    //QUESTION: Who plays Yami Yugi in Yu-Gi-Oh (kids)?
+    //ANSWER: 
+    console.log(shows.genre.kids.yuGiOh.cast[0].actor)
+    //==============================================================
 
-//======================== QUESTION 13 ==========================
-//QUESTION: List the characters in Teen Titans (kids)
-//ANSWER: 
-// for() {
-//   console.log(); 
-// }
-//==============================================================
+    //======================== QUESTION 11 ==========================
+    //QUESTION: How many seasons did the Office (comedy) run?
+    //ANSWER: 
+    console.log(shows.genre.comedy.theOffice.numSeasons);
+    //==============================================================
 
-//======================== QUESTION 14 ==========================
-//QUESTION: What is the link to the IMDB page for the actor who plays Mr. Krabs (Spongebob, kids)?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 12 ==========================
+    //QUESTION: Who are the main characters of the Office (comedy) (not the actors, but the actual character names)?
+    //ANSWER: 
+    for (var i = 0; i < shows.genre.comedy.theOffice.cast.length; i++) {
+      console.log(shows.genre.comedy.theOffice.cast[i].character)
+    }
+    //==============================================================
 
-//======================== QUESTION 15 ==========================
-//QUESTION: Who plays Negan in The Walking Dead?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 13 ==========================
+    //QUESTION: List the characters in Teen Titans (kids)
+    //ANSWER: 
+    for (var i = 0; i < shows.genre.kids.teenTitans.cast.length; i++) {
+      console.log(shows.genre.kids.teenTitans.cast[i].character)
+    }
+    //==============================================================
 
-//======================== QUESTION 16 ==========================
-//QUESTION: List the main cast of Dexter (drama) (the actors, not the characters)
-//ANSWER: 
-// for() {
-//   console.log(); 
-// }
-//==============================================================
+    //======================== QUESTION 14 ==========================
+    //QUESTION: What is the link to the IMDB page for the actor who plays Mr. Krabs (Spongebob, kids)?
+    //ANSWER: 
+    console.log(shows.genre.kids.spongeBob.cast[1].imdb);
+    //==============================================================
 
-//======================== QUESTION 17 ==========================
-//QUESTION: Is Game of Thrones(drama) still running?
-//ANSWER: 
-console.log(); 
-//==============================================================
+    //======================== QUESTION 15 ==========================
+    //QUESTION: Who plays Negan in The Walking Dead?
+    //ANSWER: 
+    console.log(shows.genre.drama.walkingDead.cast[2].actor);
+    //==============================================================
 
-//======================== QUESTION 18 ==========================
-//QUESTION: Who does Peter Dinklage play in Game of Thrones (drama)?
-//ANSWER: 
-console.log(); 
+    //======================== QUESTION 16 ==========================
+    //QUESTION: List the main cast of Dexter (drama) (the actors, not the characters)
+    //ANSWER: 
+    for (var i = 0; i < shows.genre.drama.dexter.cast.length; i++) {
+      console.log(shows.genre.drama.dexter.cast[i].actor)
+    }
+    //==============================================================
+
+    //======================== QUESTION 17 ==========================
+    //QUESTION: Is Game of Thrones(drama) still running?
+    //ANSWER: 
+    console.log(shows.genre.drama.gameOfThrones.stillRunning);
+    //==============================================================
+
+    //======================== QUESTION 18 ==========================
+    //QUESTION: Who does Peter Dinklage play in Game of Thrones (drama)?
+    //ANSWER: 
+    console.log(shows.genre.drama.gameOfThrones.cast[1].character);
 //==============================================================
 
 //======================== QUESTION 19 ==========================
 //QUESTION: List the American Idol Judges
 //ANSWER: 
-// for() {
-//   console.log(); 
-// }
+for(var i = 0; i < shows.genre.reality.americanIdol.judges.length; i++) {
+  console.log(shows.genre.reality.americanIdol.judges[i]) 
+}
 //==============================================================
 
 //======================== QUESTION 20 ==========================
 //QUESTION: Who plays Dustin in Stanger Things (drama)?
 //ANSWER: 
-console.log(); 
+console.log(shows.genre.drama.strangerThings.cast[3].actor) 
 //==============================================================
 
 
 
   </script>
 </body>
+
 </html>
