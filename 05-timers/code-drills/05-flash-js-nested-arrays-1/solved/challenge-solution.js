@@ -248,10 +248,10 @@ console.log("==================== Question 08  ====================");
 function iterateArrObjectsReverse(arrOfObj){
   // ---------- Your Code Here ----------
 
-  for (var i = arrOfObj.length-1; i >= 0; i--) {
+  for (var i = arrOfObj.length-1; i >= 1; i--) {
     console.log("Count: ", arrOfObj[i].Product);
     console.log("Item: ", arrOfObj[i].item);
-    console.log("*************************");
+   
   }
 
   // ---------- End of Code Area ----------

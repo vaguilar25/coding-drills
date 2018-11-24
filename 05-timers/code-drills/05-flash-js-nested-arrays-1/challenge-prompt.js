@@ -29,10 +29,10 @@ var nestedArray = [[1,2], ["nested", ["Radio Flyer Wagon", "Chemistry Set", ["Jo
 console.log("==================== Question 01 ====================");
 // Your target is: "Yo-Yo"
 var nestedArray = [[1,2], ["nested", ["Radio Flyer Wagon", "Chemistry Set", ["Joy Buzzer", "Yo-Yo"]]]];
-var target;
+var target=nestedArray[1][1][2][1];
 // assign `target` the value of "Yo-Yo" using the `nestedArray` variable
 // 
-
+//console.log(nestedArray[1][1][2][1] );
 
 
 
@@ -43,7 +43,7 @@ console.log(target);
 console.log("==================== Question 02 ====================");
 // Your target is: "Sock Monkey"
 var nestedArray = ["Pop-Up Book", ["Stuffed Mickey Mouse", ["Beach Ball", "Sock Monkey"], "Buck Rogers Rocket Pistol"], "Microscope Set"];
-var target;
+var target=nestedArray[1][1][1];
 // assign `target` the value of "Sock Monkey" using the `nestedArray` variable
 // 
 
@@ -56,8 +56,12 @@ console.log(target)
 // ------------------------------------------------------------------
 console.log("==================== Question 03 ====================");
 // Your target is: 42
-var nestedNumberArray = [3,1,[41,59,265,358,979],32,38,46,[264338,327,9,50,[2,88,42,971],69,3,9,937],510,58,2];
-var target;
+var nestedNumberArray = [3,1,
+                        [41,59,265,358,979],
+                         32,38,46,
+                         [264338,327,9,50,[2,88,42,971],69,3,9,937],
+                         510,58,2];
+var target=nestedNumberArray[6][4][2];
 // assign `target` the value of 42 using the `nestedNumberArray` variable
 // 
 
@@ -71,7 +75,7 @@ console.log(target);
 console.log("==================== Question 04 ====================");
 // Your target is is: "Legos"
 var nestedMixedArray = [8,[76,["Bubble Solution"],530,"Slinky","Magic 8 Ball","Legos"],9];
-var target;
+var target=nestedMixedArray[1][5];
 // assign `target` the value of "Legos" using the `nestedMixedArray` variable
 // 
 
@@ -90,7 +94,7 @@ console.log("==================== Question 05 ====================");
 
 // Your desired target is: "Value!"
 var nestedObject = {"outer": {"innerKey": {"object": {"key": "Value!"}}}}
-var target;
+var target=nestedObject.outer.innerKey.object.key;
 // assign `target` the value of "Value!" using the `nestedObject` variable
 // 
 
@@ -105,7 +109,7 @@ console.log("==================== Question 06 ====================");
 // Nested Mixed DataType Access
 // Your target is: "goal"
 var nestedMixedDataTypes = {"array": ["array", {"object": "goal"}]}
-var target;
+var target= nestedMixedDataTypes.array[1].object;
 // assign `target` the value of "goal" using the `nestedMixedDataTypes` variable
 // 
 
@@ -219,7 +223,11 @@ var toyArrayOfObjects = [
 
 function iterateArrObjects(arrOfObj){
   // ---------- Your Code Here ----------
-
+  console.log(arrOfObj[0].item);
+  console.log(arrOfObj[1].item);
+  console.log(arrOfObj[2].item);
+  console.log(arrOfObj[3].item);
+  
 
 
 
@@ -251,7 +259,11 @@ console.log("==================== Question 08  ====================");
 
 function iterateArrObjectsReverse(arrOfObj){
   // ---------- Your Code Here ----------
-
+  for (var i = arrOfObj.length-1; i >= 0; i--) {
+    console.log("Count: ", arrOfObj[i].Product);
+    console.log("Item: ", arrOfObj[i].item);
+    
+  }
 
 
   
