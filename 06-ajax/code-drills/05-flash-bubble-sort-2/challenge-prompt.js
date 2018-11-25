@@ -10,7 +10,33 @@
 function bubbleSortTwo(arr) {
     // ================= code goes here ===========================
 
-    
+
+
+    var unsortedArr = arr;
+    var swapped=true;
+    do {
+        swapped=false;
+        for (i = 0; i < unsortedArr.length-1; i++) {
+            //store the value of the first position]\
+            //temp = unsortedArr[i+1];
+            //compare the value with the next position
+            //console.log("temp: " + temp);
+            if (unsortedArr[i] > unsortedArr[i + 1]) {
+                //if it is >, then swap positions
+                var temp = unsortedArr[i];
+                unsortedArr[i] = unsortedArr[i+1];
+
+                unsortedArr[i + 1] = temp;
+                
+                swapped = true;
+            }
+            //console.log("array:" + unsortedArr);
+        }
+       
+
+       // console.log("Aray: " + unsortedArr);
+    } while (swapped);
+return unsortedArr;
 
 
 
@@ -18,9 +44,6 @@ function bubbleSortTwo(arr) {
 
 
 
-
-
-    
     // ============================================================
 }
 

@@ -9,8 +9,12 @@ function checkWibble(str) {
   // check if the `str` has an even number of characters
   // return true if it does and false if it doesn't
 
-  
-  
+  if ((str.length % 2) === 0) {
+    return true
+  } else {
+    return false
+  }
+
   // ----------- End Code Area -----------
 }
 
@@ -23,30 +27,39 @@ function checkWobble(str) {
 
   // create a string of the all vowels for us to check the letters against
 
-  
+  var vowels = "aeiou";
 
   // declare a variable to track the number of vowels in the world and 
   // instantiate it to 0
+  var trackVowels = 0;
 
-  
 
   // iterate through the characters in the `str`
+  for (i = 0; i < str.length; i++) {
 
-  
 
     // if the currect letter is a vowel, increment the variable used to track the
     // number of vowels
+    if (vowels.includes(str[i])) {
+
+      trackVowels += 1;
+    }
+    // check if the number of vowels is odd
+    // return true if it is and false if it isn't
 
     
 
-  // check if the number of vowels is odd
-  // return true if it is and false if it isn't
 
-  
+  }
+  if ((trackVowels % 2) !== 0) {
+    return false
+  } else {
+    return true
+  }
 
-
-  // ----------- End Code Area -----------
 }
+// ----------- End Code Area -----------
+
 
 
 // This is the `wibbleWobble` function. It takes in an array of strings and replaces
@@ -60,36 +73,44 @@ function wibbleWobble(arr) {
 
   // iterate through the array
 
-  
+  for (i = 0; i < arr.length; i++) {
 
     // check whether the current element passes the "Wibble" test
 
-    
+      var passWibble = checkWibble(arr[i]);
+      var passWobble = checkWobble(arr[i]);
 
-    // check whether the current element passes the "Wobble" test
+    if (passWibble && passWobble) {
 
-    
+      // check whether the current element passes the "Wobble" test
 
-    // if the element passed both tests, replace it with "WibbleWobble"
 
-    
-    
-    // if the element only passed the "Wibble" test, replace it with "Wibble"
 
-    
+      // if the element passed both tests, replace it with "WibbleWobble"
 
-    // if the element only passed the "Wobble" test, replace it with "Wobble"
+      arr[i] = "WibbleWobble";
 
-    
-    
-  
+      // if the element only passed the "Wibble" test, replace it with "Wibble"
+
+    } else if (passWibble ) {
+      arr[i] = "Wibble";
+
+    } else if ( passWobble) {
+
+      // if the element only passed the "Wobble" test, replace it with "Wobble"
+      arr[i] = "Wobble";
+    }
+
+  }
+
   // ----------- End Code Area -----------
+  console.log(arr);
   return arr;
 }
 
 
 // The following code will call on your function and display the results on the webpage
-$(function() {
+$(function () {
 
   // This is the array we're going to use to test your code:
   var testArray = [
@@ -114,7 +135,7 @@ $(function() {
 
   // Make a copy of the testArray to use with the `wibbleWobble` function
   var newArray = wibbleWobble(testArray.slice(0));
-  
+
   // This populates our table with the initial values of the array
   // and what they are after our `wibbleWobble` function
   for (var i = 0; i < testArray.length; i++) {
