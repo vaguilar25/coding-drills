@@ -9,8 +9,8 @@ console.log("==================== Question 01 ====================");
 function cubeNum(num) {
 
   // -------------------- Your Code Here --------------------
-
-
+var cubNum = Math.pow(num,3);
+  return cubNum;
   
 
 
@@ -33,7 +33,7 @@ console.log("==================== Question 02 ====================");
 function twoAverage(num1, num2) {
 
   // -------------------- Your Code Here --------------------
-
+  return ((num1+num2)/2);
 
   
 
@@ -60,6 +60,7 @@ function prepend(arr, elem) {
 
   // -------------------- Your Code Here --------------------
   
+  return arr.unshift(elem);
 
   
 
@@ -94,9 +95,9 @@ console.log("==================== Question 04 ====================");
 function addToObject(obj, key, arr) {
 
   // -------------------- Your Code Here --------------------
+  obj[key]=arr;
 
-
-  
+  return obj  
 
 
   // --------------------- End Code Area --------------------
@@ -124,7 +125,7 @@ console.log("==================== Question 05 ====================");
 function strToArray(str) {
 
   // -------------------- Your Code Here --------------------
-
+return str.split(" ");
 
 
 
@@ -151,7 +152,7 @@ function getFullName(firstName, lastName) {
 
 
   
-
+  return firstName + " " + lastName;
 
   // --------------------- End Code Area --------------------
 }
@@ -172,7 +173,7 @@ function getFirstElem(arr) {
   // -------------------- Your Code Here --------------------
 
 
-
+return arr[0];
 
 
   // --------------------- End Code Area --------------------
