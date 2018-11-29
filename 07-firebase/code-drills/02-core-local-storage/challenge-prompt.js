@@ -3,10 +3,10 @@
 
 // Given a string of 1s and 0s, this function colors the buttons on the page
 // depending upon the sequence of the digits
-function displayButtons(buttons){
+function displayButtons(buttons) {
   for (var i = 0; i < buttons.length; i++) {
     $("#card-" + i).removeClass("bg-success bg-danger");
-    if (buttons[i] === "1"){
+    if (buttons[i] === "1") {
       $("#card-" + i).addClass("bg-success");
     } else {
       $("#card-" + i).addClass("bg-danger");
@@ -25,7 +25,7 @@ function replaceChar(str, index, val) {
 }
 
 // Document.ready shorthand
-$(function() {
+$(function () {
 
   // This string represents which of our buttons are green and which are red
   var buttonColors = "111111111111";
@@ -37,11 +37,16 @@ $(function() {
   //
   // -------------------- Your Code Here --------------------
 
+  localStorage.clear();
+  var localButton = localStorage.setItem("buttonColor", buttonColors);
+  if (localButton) {
+    buttonColors = localButton;
+  }
 
-  
+
 
   // --------------------- End Code Area --------------------
-  
+
 
   // This calls the displayButtons function in order to color the strings based upon
   // the value of buttonColors  
@@ -49,7 +54,7 @@ $(function() {
 
   // This is the listener for the user clicks on the button. It should swap the current
   // color of the button and store the new button color configuration into local storage
-  $(document).on("click", ".user-card", function(event) {
+  $(document).on("click", ".user-card", function (event) {
     // Each button carries the index of the character in the buttonColors string
     // that is determining its color. We pull it out and store it inside the
     // `index` variable
@@ -61,6 +66,12 @@ $(function() {
     // defined above. After you've updated button colors, store it inside local storage.
     //
     // -------------------- Your Code Here --------------------
+    if (buttonColors[index] === "1") {
+      buttonColors = replaceChar(buttonColors, index, "0");
+    } else {
+      buttonColors = replaceChar(buttonColors, index, "1");
+    }
+    localStorage.setItem("buttons", buttonColors);
 
 
 
