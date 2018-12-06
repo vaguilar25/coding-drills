@@ -5,7 +5,7 @@ function fizzBuzz(n) {
     allNums.push(i);
   }
   allNums.reverse();
-
+  console.log("All Nums: " + allNums);
   for (let i = 0 ; i < allNums.length ; i ++) {
     if (allNums[i] % 3 === 0 && allNums[i] % 5 === 0) {
       console.log("fizzbuzz")
