@@ -5,7 +5,9 @@
   function distanceFrom(str, char) {
 // ===================== YOUR WORK HERE =====================
 
-
+   var numberAppear = str.split(char);
+   
+  console.log( "number of times:" + numberAppear);
 
 
 // ==========================================================

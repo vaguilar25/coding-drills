@@ -1,63 +1,86 @@
 // require inquirer
 
-
+var inquirer = require('inquirer');
+var listQuotes = [];
 
 // define our initial quotes
-
+var actionList = [{ value: 1, name: 'add to a list of quotes' }, { value: 2, name: 'select a quote to display' }, { value: 3, name: 'exit' }];
 
 
 // call on the function that displays our main menu
+var question = {
+
+  type: 'list',
+  name: 'actions',
+  message: 'What would you like to do?',
+  choices: actionList,
 
 
 
-// define a function that displays the main menu
+};
+init()
+function init() {
+  inquirer.prompt(question).then(answers => {
+    //console.log('\nOrder receipt:');
+    //console.log(JSON.stringify(answers, null, '  '));
+    console.log(answers.actions);
+    if (answers.actions === 1) {
+      addQuote();
+    } else if (answers.actions === 2) {
+      displayQuote();
+    }
 
+  });
+}
 
-  // prompt the user to choose between three options
-  
-  
+function displayQuote() {
+  inquirer.prompt([
+    {
+      type: 'list',
+      name: 'quotes',
+      message: 'Choose an author quote:',
+      choices: listQuotes
 
-    // depending on the user selection, 
+    },
 
+  ]).then(function (answers) {
+
+    console.log( answers.quotes);
+   
     
-      // call on a function to show the quotes
-
-      
-
-      // call on a function to add a new quote
-
-      
-
-      // exit the application by not calling on any functions
-
-      
+    init();
+  })
 
 
+}
 
-// define a function that will show the user all the quotes to choose from
-
-
-  // create a new array of all the authors of the quotes to use for the user prompt
-
-  
-
-  // ask the user to choose which author's quote they want to see
-
-  
-
-    // find the quote by the chosen author and display it
-
-    
+function addQuote() {
 
 
-// define a function that lets the user add quotes to the display list
+  inquirer.prompt([
+    {
+      type: 'input',
+      name: 'author',
+      message: 'Enter the author name:'
+
+    },
+    {
+      type: 'input',
+      name: 'quote',
+      message: 'Enter a quote'
+    }
+
+  ]).then(function (answers) {
+
+    listQuotes.push(
+      {name:answers.author, value:answers.quote}
+    );
+    console.log(listQuotes[0].value + " - " + listQuotes[0].name);
+      init();
+
+  })
+
+}
 
 
-  // ask the user to input the author and then the quote
- 
-  
 
-    // add the new quote with the corresponding author into our quote storage
-
-    
-    
