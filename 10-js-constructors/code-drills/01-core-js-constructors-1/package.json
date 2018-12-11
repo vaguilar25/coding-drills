@@ -1,0 +1,15 @@
+{
+  "name": "01-core-js-constructors-1",
+  "version": "1.0.0",
+  "description": "* There should be two constructors we're defining for this activity: a `Deck` and a `Card`.",
+  "main": "challenge-prompt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fisher-yates": "^1.0.3"
+  }
+}
