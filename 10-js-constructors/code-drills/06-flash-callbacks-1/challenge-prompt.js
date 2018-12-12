@@ -6,7 +6,9 @@
 
 // ===================== Code Starts Here =====================
 
-
+function minionOne  (callback, varString) {
+    callback(varString);
+}
 
 
 // ===================== Code Ends Here =====================
@@ -17,7 +19,7 @@
 // a string of "Have you seen Gru?" as arguments
 
 // ===================== Code Starts Here ===================
-
+minionOne(minionTwo, "Have you seen Gru?");
 
 
 
@@ -30,6 +32,9 @@
 
 // ===================== Code Starts Here =====================
 
+function minionTwo ( varString) {
+   console.log(varString);
+}
 
 
 
@@ -43,7 +48,15 @@
 
 // ===================== Code Starts Here =====================
 
+function minionThree (callbackFunction, varBoolean) {
+   if (varBoolean) {
+    console.log("I found Gru\n -------------\n");
+    callbackFunction();
 
+   } else {
+       console.log("Still looking for Gru");
+   }
+ }
 
 
 // ===================== Code Ends Here ===================== 
@@ -54,7 +67,9 @@
 // console logs "Hip Hip Horray!\n -------------\n"
 
 // ===================== Code Starts Here =====================
-
+function callBacksAreFun () {
+    console.log("Hip Hip Horray!\n -------------\n");
+}
 
 
 
@@ -67,7 +82,7 @@
 
 // ===================== Code Starts Here =====================
 
-
+minionThree (callBacksAreFun,true);
 
 
 // ===================== Code Ends Here ===================== 

@@ -6,11 +6,11 @@ Starter Code :*/
 function indexOfLetter(char, str) {
   // code starts here
 
+  return (str.indexOf(char));
 
 
 
 
-  
   // code ends here
 }
 
@@ -26,13 +26,29 @@ Starter Code :*/
 function evenElementsOnly(obj, key) {
   // code starts here
 
-  
+  for (key in obj) {
+   // console.log(obj[key]);
+    var newArray = [];
+    for (i = 0; i < obj[key].length; i++) {
+    //  console.log(obj[key][i]);
+      if ((obj[key][i]) % 2 === 0) {
+        newArray.push(obj[key][i]);
+      }
+
+    }
+  }
+//other solution
+  var evenArray = [];
+  for (var prop in obj[key]) {
+    if (obj[key][prop] % 2 === 0) {
+      evenArray.push(obj[key][prop]);
+    }
+  }
+
+  return newArray;
 
 
-
-
-
-    // code ends here
+  // code ends here
 }
 
 var obj = {
