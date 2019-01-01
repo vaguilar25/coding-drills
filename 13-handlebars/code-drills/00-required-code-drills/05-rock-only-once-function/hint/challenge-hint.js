@@ -8,11 +8,15 @@
 function onlyOnce() {
   // -------------------- Your Code Here --------------------
   // Reassign the onlyOnce pointer from the current function to a
+
   // new function that just returns null. Because onlyOnce is not
   // defined within this function, it will look for the variable in
   // the global scope which currently points to this function
+  onlyOnce = function() {return null};
+ 
+  console.log("I'm RUNNING!");
 
-  
+return true
 
   // Console log "I'm RUNNING!"
 
