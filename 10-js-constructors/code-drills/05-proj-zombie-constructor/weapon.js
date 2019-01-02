@@ -28,7 +28,7 @@ var Weapon = function (name, reach, attack, risk, reliability, uses) {
 
 }
 
-module.exports.Weapon=Weapon;
+module.exports=Weapon;
 
 
 

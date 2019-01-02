@@ -23,7 +23,7 @@ function Game() {
 
     //Given our current scope, this is a great place to create a variable that points to "this". We can use this variable later down the line
 
-
+    var track = this;
 
   //===================================================
 

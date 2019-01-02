@@ -23,7 +23,7 @@ var Zombie = function (name, health, attack, agility) {
 }
 
 
-module.exports.Zombie=Zombie;
+module.exports=Zombie;
 
 
 

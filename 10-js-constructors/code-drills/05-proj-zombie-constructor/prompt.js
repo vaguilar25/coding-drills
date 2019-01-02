@@ -18,9 +18,9 @@ var hero = {
 var bearHands = new Weapon("Bear Hands", 1, [5, 5], 95, 90, 100000000000000);
 var machete = new Weapon("Machete", 1, [40, 60], 80, 90, 5);
 var shotgun = new Weapon("Shotgun", 2, [30, 50], 65, 80, 5);
-var machineGun = new Weapon("Machine Gun", 3, [15, 30], 30, 65, 5);
+var machineGun = new Weapon("Machine Gun", 1, [15, 30], 30, 65, 5);
 var pistol = new Weapon("Pistol", 1, [25, 40], 50, 75, 5)
-var sniper = new Weapon("Sniper", 1, [40, 60], 30, 20, 100, 5);
+var sniper = new Weapon("Sniper", 1, [40, 60], 30, 20, 5);
 var rpg = new Weapon("RPG", 4, [20, 35], 95, 40, 5);
 
 
@@ -86,21 +86,19 @@ function Game() {
 
     // STEP 6.1: Display the health of the zombies and hero.
 
-
-
-    // Loop through the zombieFighters array, and display their health. Outside of the loop, display the hero's health.
-    console.log("\n=============================\n")
-
-    for (var i = 0; i < zombieFighters.length; i++) {
+    for (i = 0; i < zombieFighters.length; i++) {
 
       if (zombieFighters[i].health > 0) {
-
-        console.log(zombieFighters[i].name + " Health: ", zombieFighters[i].health)
-
+        console.log(zombieFighters[i].name + " Health " + zombieFighters[i].health);
       }
     }
 
-    console.log(hero.health);
+
+    console.log("Hero Health " + hero.health);
+    // Loop through the zombieFighters array, and display their health. Outside of the loop, display the hero's health.
+
+
+
 
     console.log("\n=============================\n")
     //===================================================
@@ -117,7 +115,7 @@ function Game() {
 
 
     //===================================================
-    var temp = this;
+    var play = this;
 
 
     inquirer.prompt([
@@ -159,28 +157,64 @@ function Game() {
           break;
 
         case "Machete":
+          machete.calcDamage(machete.attack[0], machete.attack[1]);
 
+          machete.didDam = machete.damageBool(machete.reliability);
+
+          machete.used();
+
+          play.pickZombie(machete);
           break;
 
         case "Shotgun":
+          shotgun.calcDamage(shotgun.attack[0], shotgun.attack[1]);
 
+          shotgun.didDam = shotgun.damageBool(shotgun.reliability);
+
+          shotgun.used();
+
+          play.pickZombie(shotgun);
           break;
 
         case "Pistol":
+          pistol.calcDamage(pistol.attack[0], pistol.attack[1]);
 
+          pistol.didDam = pistol.damageBool(pistol.reliability);
+
+          pistol.used();
+
+          play.pickZombie(pistol);
 
           break;
 
         case "Machine Gun":
+          machineGun.calcDamage(machineGun.attack[0], machineGun.attack[1]);
 
+          machineGun.didDam = machineGun.damageBool(machineGun.reliability);
+
+          machineGun.used();
+
+          play.pickZombie(machineGun);
           break;
 
         case "Sniper":
+          sniper.calcDamage(sniper.attack[0], sniper.attack[1]);
 
+          sniper.didDam = sniper.damageBool(sniper.reliability);
+
+          sniper.used();
+
+          play.pickZombie(sniper);
           break;
 
         case "RPG":
+          rpg.calcDamage(rpg.attack[0], rpg.attack[1]);
 
+          rpg.didDam = sniper.damageBool(sniper.reliability);
+
+          rpg.used();
+
+          play.pickZombie(rpg);
           break;
 
         //===================================================
@@ -193,7 +227,7 @@ function Game() {
           console.log("Bear Hands:\n reach: 1\n attack: 5 \n risk:95\n reliability: 90 \n uses: ∞\n\n Machete: \n reach: 1\n attack: min(40), max(60)\n risk: 80\n reliability: 90\n uses: " + + "\n\nShotgun: \n reach: 2\n attack: min(30), max(50)\n risk: 65\n reliability: 80\n uses: " + + "\n\nPistol: \n reach: 2\n attack: min(25) max(40)\n risk: 50\n reliability: 75\n uses: " + + "\n\nMachine Gun:\n reach: 3\n attack: min(15), max(30)\n risk: 30\n reliability: 65\n uses: " + + "\n\nSniper:\n reach: 1\n attack: min(40) max(60)\n risk: 30\n reliability: 20\n uses: " + + "\n\nRPG:\n reach: 4\n attack: min(20), max(35)\n risk: 95\n reliability: 40\n uses: " + + "\n\n")
           //6.4.2
           //Invoke the next round function
-
+          play.nextRound();
           //===================================================
           break;
       }
@@ -223,19 +257,19 @@ function Game() {
 
       switch (zombie.zombie) {
         case "zombie1":
-
+          play.fight(zombie1, weapon);
           break;
         case "zombie2":
-
+          play.fight(zombie2, weapon);
           break;
         case "zombie3":
-
+          play.fight(zombie3, weapon);
           break;
         case "zombie4":
-
+          play.fight(zombie4, weapon);
           break;
         case "zombie5":
-
+          play.fight(zombie5, weapon);
           break;
         // ======================================
       }
