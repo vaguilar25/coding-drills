@@ -26,21 +26,22 @@ var Deck = function ( cards = []) {
         return this.cards.length;
     }
     this.shuffle = function () {
-        shuffle(this.cards);
+        for (var i = this.cards.length - 1; i >= 0; i--) {
+            var randIndex = Math.floor(Math.random()*(i+1));
+            var tempCard = this.cards[i];
+            this.cards[i] = this.cards[randIndex];
+            this.cards[randIndex] = tempCard;
+          }
     }
     this.draw = function () {
         return this.cards.pop();
     }
     this.add = function (value) {
 
-        this.cards.push(new Card(value));
+        this.cards.push(value);
         this.shuffle();
     }
 }
-
-
-
-
 
 // --------------------- End Code Area --------------------
 
