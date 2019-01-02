@@ -1,0 +1,15 @@
+{
+  "name": "03-core-express-even-letters",
+  "version": "1.0.0",
+  "description": "_In this activity, we're going to be setting up a server with Express.js and writing an algorithm that will operate on the parameter we pass the server through a route parameter_",
+  "main": "challenge-prompt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

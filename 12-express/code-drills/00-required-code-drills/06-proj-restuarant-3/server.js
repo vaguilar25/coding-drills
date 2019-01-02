@@ -30,7 +30,7 @@ connection.connect(function(err) {
 
 // Initialize express and set our port to 3002
 var app = express()
-var PORT = 3002
+var PORT = 8052
 
 // Make our app use bodyparser to access our requests
 app.use(bodyParser.urlencoded({ extended: true }))

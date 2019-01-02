@@ -1,0 +1,19 @@
+{
+  "name": "04-proj-restaurant-1",
+  "version": "1.0.0",
+  "description": "_Today's code drills will build towards a full stack app. The first step is going to be setting up our server._",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "oath": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}

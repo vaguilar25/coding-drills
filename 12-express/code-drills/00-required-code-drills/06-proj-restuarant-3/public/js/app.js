@@ -16,7 +16,14 @@ $(document).ready(function () {
   
   // Write a route to get all the restaurants and then call on the provided helper function in order to display the restaurants given to you. This will be run as soon as the page loads.
   // -------------------- Your Code Here --------------------
+  $.get("/api/restaurants",  function(response) {
+    console.log(response)
+    for (i=0; i<response.length;i++) {
+      renderCards(response[i].restaurant_name, response[i].restaurant_link, response[i].restaurant_img, response[i].restaurant_id, response[i].rating);
+    }
+   
 
+});
 
 
 
@@ -27,8 +34,20 @@ $(document).ready(function () {
   // Write an on click listener that listens for when the user clicks on a star. Look to the helper function that displays the card in order to find the value of the star being clicked on so you can update the rating. If you want to grab the restaurant id, that should also be stored in the parent container of the star being clicked.
   // -------------------- Your Code Here --------------------
 
-
-
+ 
+  $(document).on("click", ".stars-contain", function () {
+    var restaurantId = $(this).parent().attr("id")
+    var restaurantRating = $(this).attr("value")
+    var updateRating = {
+      restaurant_id: restaurantId,
+      rating: restaurantRating
+    }
+    $.ajax({
+      type: "PUT",
+      url: "/api/restaurants/" + restaurantId + "/rating/" + restaurantRating,
+      data: updateRating
+    })
+  })
 
   // --------------------- End Code Area --------------------
 
@@ -36,7 +55,22 @@ $(document).ready(function () {
 
   // Post a new restaurant to the database when the form is submitted from the add.html page
   // -------------------- Your Code Here --------------------
+  $("#newRestaurant").on("submit", function (event) {
+    //event.preventDefault();
+    var newRestaurant = {
+      restaurant_name: $("#restauarant_name").val().trim(),
+      restaurant_link: $("#restauarant_link").val().trim(),
+      restaurant_img: $("#restauarant_img").val().trim(),
+      rating: $("#rating").val().trim(),
+    }
+    $.ajax({
+      type:"POST",
+      url:"/api/restaurants/new",
+      data:newRestaurant
+    })
 
+
+  })
 
 
 
