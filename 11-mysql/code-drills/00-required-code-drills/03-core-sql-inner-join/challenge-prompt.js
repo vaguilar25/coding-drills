@@ -8,10 +8,10 @@ var connection = mysql.createConnection({
     port: 3306,
 
     // Your username
-    user: "",
+    user: "root",
 
     // Your password
-    password: "",
+    password: "password",
 
     // 
     database: "food_DB"
@@ -29,7 +29,11 @@ connection.connect(function (err) {
 function foodSearch() {
 // =============== Code Starts Here ===============
 
-
+var query = "SELECT nutrition.id, ingredients.foodname FROM ingredients INNER JOIN nutrition ON nutrition.foodname = ingredients.foodname";
+connection.query(query, function (err, res) {
+    console.log("err", err)
+    console.log("res", res)
+});
 
 
 
